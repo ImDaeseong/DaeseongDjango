@@ -1,5 +1,3 @@
-# DaeseongDjango
-DaeseongDjango
 
 ### install_django
 ![1](https://user-images.githubusercontent.com/10001221/186601797-3f81b1b5-aa60-490e-974c-87384aeba78d.png)
