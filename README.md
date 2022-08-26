@@ -22,3 +22,7 @@
 ### pip-install
 ![9](https://user-images.githubusercontent.com/10001221/186602120-9f37fe85-25c6-45b1-8a45-48be212a9390.png)
 
+### pip install -r requirements.txt
+![1](https://user-images.githubusercontent.com/10001221/186829955-78b94afd-7bf9-4599-b8bc-8a4804c9c13f.png)
+![2](https://user-images.githubusercontent.com/10001221/186829970-fee1396f-66fd-4389-8215-b23a8ae160cb.png)
+
