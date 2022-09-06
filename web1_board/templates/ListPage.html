@@ -1,0 +1,28 @@
+{% extends "BasePage.html" %}
+
+{% block content %}
+
+    <a href="/AddItem/" >추가</a>
+
+    {% if data %}
+       <table border="1">
+            <th> id </th>
+            <th> 제목 </th>
+            <th> 내용 </th>
+            <th> 생성일 </th>
+            <th> 수정일 </th>
+
+            {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td><a href="/DetailItem/{{ i.id }}/" >{{ i.sTitle }}</a></td>
+                    <td>{{ i.sContent }}</td>
+                    <td>{{ i.dCreated }}</td>
+                    <td>{{ i.dUpdated }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+    {% endif %}
+
+{% endblock content %}
