@@ -20,7 +20,7 @@ def Detail_view(request, pk):
 def Add_view(request):
     form = board_contentForm()
     if request.method == "POST":
-        form = board_contentForm(request.POST)
+        form = board_contentForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("/")

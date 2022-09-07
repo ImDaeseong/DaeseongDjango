@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>CreatePage</title>
+</head>
+<body>
+     <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        제목<br>
+        <input type="text" name="sTitle"><br>
+        내용<br>
+        <textarea rows="10" cols="50" name="sContent"></textarea><br>
+        <input id="iImage" type="file" name="iImage"><br>
+        <input type="submit" value="글쓰기">
+    </form>
+</body>
+</html>

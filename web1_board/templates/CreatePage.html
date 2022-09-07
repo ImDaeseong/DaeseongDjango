@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <form method="post">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form_data.as_p }}
         <button type="submit">추가</button>

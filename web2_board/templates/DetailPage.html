@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DetailPage</title>
+</head>
+<body>
+      <p>{{data.sTitle}}</p>
+      <p>{{data.sContent}}</p>
+      {% if data.iImage %}
+          <img src = "{{ data.iImage.url }}" alt="" height="50">
+          <br>
+      {% endif %}
+      <a href="{% url 'List_view' %}">리스트</a>
+      <a href="/DeleteItem/{{ data.id }}/">삭제</a>
+</body>
+</html>

@@ -6,22 +6,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # print('TEMPLATE_DIR 경로:' + str(TEMPLATE_DIR))
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-d86=wm#pjw7#cn4f-r=%_-7^b-k3eb$lxxl)8-c545zc5(ep95'
+SECRET_KEY = 'django-insecure-9f)!wf519c+zpanvg7@100r8&&3qbcgvwf%%kbyf%5y*^_&b0x'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 INSTALLED_APPS = [
+    'board',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'board',
 ]
 
 MIDDLEWARE = [
@@ -54,14 +54,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -77,7 +75,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # 다국어/지역시간 한국으로 변경
 LANGUAGE_CODE = 'ko-kr'
@@ -96,8 +93,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# print('STATICFILES_DIRS 경로:' + str(STATICFILES_DIRS))
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# print('MEDIA_ROOT 경로:' + str(MEDIA_ROOT))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
