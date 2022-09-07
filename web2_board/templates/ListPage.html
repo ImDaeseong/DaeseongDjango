@@ -12,5 +12,12 @@
       {% endfor %}
 
       <button><a href="/AddItem/" >추가</a></button>
+      <br>
+      <form method="GET" action="{% url 'Search_view' %}">
+         {% csrf_token %}
+         <input name="search" type="text">
+         <input type="submit" value="검색">
+      </form>
+      <br>
 </body>
 </html>

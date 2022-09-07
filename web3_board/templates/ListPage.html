@@ -15,6 +15,11 @@
         </div> <br>
     </div>
     {% endfor %}
-
+    <br>
+    <form method="GET" action="{% url 'Search_view' %}">
+        {% csrf_token %}
+        <input name="search" type="text">
+        <input type="submit" value="검색">
+    </form>
 </body>
 {% endblock %}
