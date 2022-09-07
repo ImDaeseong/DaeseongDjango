@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>ListPage</title>
+</head>
+<body>
+      {% for i in data  %}
+            <ul>
+                <li><a href="/DetailItem/{{ i.id }}/" >{{ i.sTitle }}</a</li>
+            </ul>
+      {% endfor %}
+
+      <button><a href="/AddItem/" >추가</a></button>
+</body>
+</html>
