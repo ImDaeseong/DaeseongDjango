@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from config import util
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 # print('BASE_DIR 경로:' + str(BASE_DIR))
@@ -7,12 +8,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # print('TEMPLATE_DIR 경로:' + str(TEMPLATE_DIR))
 
-SECRET_KEY = 'django-insecure-d86=wm#pjw7#cn4f-r=%_-7^b-k3eb$lxxl)8-c545zc5(ep95'
+
+SECRET_KEY = util.get_secret()  # 'django-insecure-d86=wm#pjw7#cn4f-r=%_-7^b-k3eb$lxxl)8-c545zc5(ep95'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -54,14 +55,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -78,7 +77,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # 다국어/지역시간 한국으로 변경
 LANGUAGE_CODE = 'ko-kr'
 
@@ -89,7 +87,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 STATIC_URL = 'static/'
 

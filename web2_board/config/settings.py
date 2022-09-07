@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from config import util
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 # print('BASE_DIR 경로:' + str(BASE_DIR))
@@ -8,7 +9,7 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 # print('TEMPLATE_DIR 경로:' + str(TEMPLATE_DIR))
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-9f)!wf519c+zpanvg7@100r8&&3qbcgvwf%%kbyf%5y*^_&b0x'
+SECRET_KEY = util.get_secret()  # 'django-insecure-9f)!wf519c+zpanvg7@100r8&&3qbcgvwf%%kbyf%5y*^_&b0x'
 
 DEBUG = True
 
@@ -86,7 +87,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 STATIC_URL = 'static/'
 

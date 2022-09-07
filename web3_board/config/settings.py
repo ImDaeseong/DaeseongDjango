@@ -1,9 +1,11 @@
 import os
 from pathlib import Path
 
+from config import util
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-*1_oh3+m(#8f6tfpmrgitcz9vu*n1#g-2$!pq@y0@q=vel0$xp'
+SECRET_KEY = util.get_secret()  # 'django-insecure-*1_oh3+m(#8f6tfpmrgitcz9vu*n1#g-2$!pq@y0@q=vel0$xp'
 
 DEBUG = True
 
