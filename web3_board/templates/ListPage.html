@@ -1,0 +1,20 @@
+{% extends 'BasePage.html' %}
+
+{% block contents %}
+<body>
+    <br>
+    {% for i in data %}
+    <div>
+        <div>
+            <div>
+              제목: {{i.sTitle}}<br>
+              생성일: {{i.dCreated}}<br>
+              내용: {{i.summary}}<br>
+              <a href="{% url 'Detail_view' i.id %}">세부내용</a>
+            </div>
+        </div> <br>
+    </div>
+    {% endfor %}
+
+</body>
+{% endblock %}

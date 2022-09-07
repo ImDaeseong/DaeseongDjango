@@ -1,0 +1,10 @@
+<body>
+    <ul>
+        <li><a class="nav-link" href="{% url 'Add_view' %}">글쓰기</a></li>
+        <li><a class="dropdown-item" href="{% url 'addUser' %}">회원가입</a></li>
+        <li><a class="dropdown-item" href="{% url 'login' %}">로그인</a></li>
+        <li><a class="dropdown-item" href="{% url 'logout' %}">로그아웃</a></li>
+    </ul>
+    {% block contents %}
+    {% endblock %}
+</body>

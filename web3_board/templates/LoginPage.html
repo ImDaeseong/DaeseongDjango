@@ -1,0 +1,19 @@
+{% extends 'BasePage.html' %}
+
+{% block contents %}
+    <div>
+        <h1>로그인</h1>
+        <form method= 'POST' action ="{% url 'login' %}">
+            {% csrf_token %}
+            아이디:
+            <br>
+            <input name="user_id" type="text" value="">
+            <br><br>
+            비밀번호:
+            <br>
+            <input name="user_password" type="password" value="">
+            <br>
+            <input type="submit" value="로그인">
+        </form>
+    </div>
+{% endblock %}
