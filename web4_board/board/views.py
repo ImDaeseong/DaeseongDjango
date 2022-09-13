@@ -13,7 +13,13 @@ def List_view(request):
     paging = Paginator(data_all, 2)
     page_data = paging.get_page(page)
 
-    context = {'data': page_data}
+    # print('개수:' + str(paging.count))
+    # print('페이지수:' + str(paging.num_pages))
+    # print('1번 페이지:' + str(paging.get_page(1)))
+    # print('페이지당 보여줄 개수:' + str(paging.per_page))
+    # print('페이지 범위:' + str(paging.page_range))
+
+    context = {'data': page_data, 'curpage': page}
     return render(request, 'listPage.html', context)
 
 
