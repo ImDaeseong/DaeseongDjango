@@ -1,0 +1,26 @@
+{% extends 'BasePage.html' %}
+
+{% block content %}
+
+    <h3>로그인</h3>
+    <form method = "POST" action ="{% url 'login' %}">
+        {% csrf_token %}
+        {% if error %}
+            <p>{{error}}</p>
+        {% endif %}
+        사용자 이름
+        <br>
+        <input name ="user_id" type="text">
+        <br><br>
+        비밀번호
+        <br>
+        <input name ="user_password" type="password">
+        <br><br>
+        이메일 주소
+        <br>
+        <input name ="user_email" type="text">
+        <br><br>
+        <input type="submit" value = "로그인">
+    </form>
+
+{% endblock %}

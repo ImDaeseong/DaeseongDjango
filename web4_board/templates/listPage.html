@@ -1,0 +1,13 @@
+{% extends 'BasePage.html' %}
+
+{% block content %}
+
+    {% for i in data %}
+         <p>제목: {{i.sTitle}}</p>
+         <p>생성일: {{i.dCreated}}</p>
+         <p>내용: {{i.summary}}</p>
+         <p><a href="/DetailItem/{{ i.id }}/" >세부내용</a></p>
+    {% endfor %}
+
+
+{% endblock %}

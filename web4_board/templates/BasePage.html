@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>BasePage</title>
+</head>
+<body>
+
+    <div>
+        <ul>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{%url 'Add_view' %}">글쓰기</a>
+                </li>
+                <li>
+                    {{user.username}}님 반갑습니다
+                </li>
+                <li>
+                    <a href="{%url 'logout' %}">로그아웃</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'addUser' %}">회원가입</a>
+                </li>
+                <li>
+                    <a href="{% url 'login' %}">로그인</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <div>
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</body>
+</html>

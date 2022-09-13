@@ -1,0 +1,30 @@
+{% extends 'BasePage.html' %}
+
+{% block content %}
+
+    <h3>회원가입</h3>
+    <form method = "POST" action ="{% url 'addUser' %}">
+        {% csrf_token %}
+        {% if error %}
+            <p>{{error}}</p>
+        {% endif %}
+        사용자 이름
+        <br>
+        <input name ="user_id" type="text">
+        <br><br>
+        비밀번호
+        <br>
+        <input name ="user_password1" type="password">
+        <br><br>
+        비밀번호 확인
+        <br>
+        <input name ="user_password2" type="password">
+        <br><br>
+        이메일 주소
+        <br>
+        <input name ="user_email" type="text">
+        <br><br>
+        <input type="submit" value = "계정 생성">
+    </form>
+
+{% endblock %}

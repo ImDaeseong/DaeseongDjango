@@ -44,6 +44,10 @@ def Add_view(request):
 
 def Delete_view(request, pk):
     data_all = board_content.objects.get(id=pk)
+
+    if data_all.iImage:
+        data_all.iImage.delete()  # print(data_all.iImage)
+
     data_all.delete()
     return redirect("/")
 
