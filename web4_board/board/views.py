@@ -1,12 +1,19 @@
-from django.core import paginator
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from board.models import board_content
 
 
 def List_view(request):
-    data_all = board_content.objects.all()
-    # print(data_all)
-    context = {'data': data_all}
+    data_all = board_content.objects.all().order_by('-id')
+
+    # 없으면 1로 지정
+    page = int(request.GET.get('page', 1))
+
+    # 한페이지 2개씩만 보이도록 설정
+    paging = Paginator(data_all, 2)
+    page_data = paging.get_page(page)
+
+    context = {'data': page_data}
     return render(request, 'listPage.html', context)
 
 
@@ -74,5 +81,7 @@ def Update_view(request, pk):
 
 def Delete_view(request, pk):
     data_all = board_content.objects.get(id=pk)
+    if data_all.iImage:
+        data_all.iImage.delete()  # print(data_all.iImage)
     data_all.delete()
     return redirect('/')
