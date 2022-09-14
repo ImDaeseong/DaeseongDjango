@@ -1,5 +1,7 @@
 {% extends "BasePage.html" %}
 
+{% load static %}
+
 {% block content %}
 
      <a href="/AddItem/" >추가</a>
@@ -31,5 +33,10 @@
 
         </table>
     {% endif %}
+
+    <br>
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+    <br>
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img2.png' %}"></a>
 
 {% endblock content %}

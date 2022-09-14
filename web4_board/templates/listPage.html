@@ -1,5 +1,7 @@
 {% extends 'BasePage.html' %}
 
+{% load static %}
+
 {% load mathfilters  %}
 
 {% block content %}
@@ -17,9 +19,11 @@
 		<a href="?page={{data.previous_page_number}}">이전</a>
 	{% endif %}
 
-	{% for index in data.paginator.page_range %}
-		<a href="?page={{index}}">{{index}}</a>
-	{% endfor %}
+	{% if data %}
+		{% for index in data.paginator.page_range %}
+			<a href="?page={{index}}">{{index}}</a>
+		{% endfor %}
+	{% endif %}
 
 	{% if data.has_next %}
     	<a href="?page={{data.next_page_number}}">다음</a>
@@ -34,18 +38,25 @@
 		<a href="?page={{intStart|sub:page_range|abs}}">[이전{{page_range}}개]</a>
 	{% endif %}
 
-    {% for i in pagelist %}
-        {% if i == curPage %}
-			<b>[<font color="red">{{i}}</font>]</b>
-		{% else %}
-			[<a href="?page={{i}}">{{i}}</a>]
-		{% endif %}
-	{% endfor %}
+	{% if data %}
+		{% for i in pagelist %}
+			{% if i == curPage %}
+				<b>[<font color="red">{{i}}</font>]</b>
+			{% else %}
+				[<a href="?page={{i}}">{{i}}</a>]
+			{% endif %}
+		{% endfor %}
+	{% endif %}
 
 	{% if total_page > intEnd %}
 		<a href="?page={{intEnd|add:1}}">[다음{{page_range}}개]</a>
 		<a href="?page={{total_page}}">[{{total_page}}]</a>
     {% endif %}
     </div>
+
+    <br>
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+    <br>
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img2.png' %}"></a>
 
 {% endblock %}
