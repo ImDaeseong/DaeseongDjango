@@ -1,11 +1,8 @@
-import os
 from pathlib import Path
-
-from config import util
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = util.get_secret()  # 'django-insecure-(u77+%6i)jz7z#1wc*y8oqicwnd62jmkfzb(opjfddt+jto15t'
+SECRET_KEY = 'django-insecure-g5t#d(letu*@&5r6nov9psy$tgz#aim)bhwyosqjk(f_ju%=-7'
 
 DEBUG = True
 
@@ -18,9 +15,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'board',
-    'user',
-    'mathfilters',
 ]
 
 MIDDLEWARE = [
@@ -38,7 +32,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,26 +69,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# 다국어/지역시간 한국으로 변경
-LANGUAGE_CODE = 'ko-kr'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Asia/Seoul'
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
-
-USE_L10N = True
 
 USE_TZ = True
 
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-# print('STATICFILES_DIRS 경로:' + str(STATICFILES_DIRS))
-
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# print('MEDIA_ROOT 경로:' + str(MEDIA_ROOT))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

@@ -1,10 +1,13 @@
 {% extends 'BasePage.html' %}
 
+{% load mathfilters  %}
+
 {% block content %}
 
     {% for i in data %}
          <p>제목: {{i.sTitle}}</p>
          <p>생성일: {{i.dCreated}}</p>
+         <p>수정일: {{i.dUpdated}}</p>
          <p>내용: {{i.summary}}</p>
          <p><a href="/DetailItem/{{ i.id }}/" >세부내용</a></p>
     {% endfor %}
@@ -21,6 +24,28 @@
 	{% if data.has_next %}
     	<a href="?page={{data.next_page_number}}">다음</a>
 	{% endif %}
+    </div>
+
+    <br><br>
+
+    <div>
+	{% if cur_Page > page_range %}
+		<a href="?page=1">[1]</a>
+		<a href="?page={{intStart|sub:page_range|abs}}">[이전{{page_range}}개]</a>
+	{% endif %}
+
+    {% for i in pagelist %}
+        {% if i == curPage %}
+			<b>[<font color="red">{{i}}</font>]</b>
+		{% else %}
+			[<a href="?page={{i}}">{{i}}</a>]
+		{% endif %}
+	{% endfor %}
+
+	{% if total_page > intEnd %}
+		<a href="?page={{intEnd|add:1}}">[다음{{page_range}}개]</a>
+		<a href="?page={{total_page}}">[{{total_page}}]</a>
+    {% endif %}
     </div>
 
 {% endblock %}
