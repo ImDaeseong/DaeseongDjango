@@ -1,24 +1,15 @@
 {% extends 'BasePage.html' %}
 
 {% block contents %}
-    <body>
-          <div>
-              <form method="POST" enctype="multipart/form-data">
-                   {% csrf_token %}
-                   제목
-                   <br>
-                   <input type="text" name="sTitle">
-                   <br><br>
-                   내용
-                   <br>
-                   <textarea cols=40 rows=10 name="sContent"></textarea>
-                   <br><br>
-                   이미지
-                   <br>
-                   <input id="iImage" type="file" name="iImage">
-                   <br><br>
-                   <input type="submit" value="저장">
-              </form>
-          </div>
-    </body>
+
+   <form method="POST" enctype="multipart/form-data">
+       {% csrf_token %}
+       <table style="width:90%" border="1">
+           <tr><td>제목</td><td><input type="text" name="sTitle"></td></tr>
+           <tr><td>내용</td><td><textarea rows="5" cols="100" name="sContent"></textarea></td></tr>
+           <tr><td>이미지</td><td><input id="iImage" type="file" name="iImage"></td></tr>
+           <tr><td colspan="2"><input type="submit" value="글쓰기"></td></tr>
+       </table>
+   </form>
+
 {% endblock %}

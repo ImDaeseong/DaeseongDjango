@@ -2,29 +2,16 @@
 
 {% block content %}
 
-    <h3>회원가입</h3>
-    <form method = "POST" action ="{% url 'addUser' %}">
+   <h1>회원가입</h1>
+   <form method= 'POST' action ="{% url 'addUser' %}">
         {% csrf_token %}
-        {% if error %}
-            <p>{{error}}</p>
-        {% endif %}
-        사용자 이름
-        <br>
-        <input name ="user_id" type="text">
-        <br><br>
-        비밀번호
-        <br>
-        <input name ="user_password1" type="password">
-        <br><br>
-        비밀번호 확인
-        <br>
-        <input name ="user_password2" type="password">
-        <br><br>
-        이메일 주소
-        <br>
-        <input name ="user_email" type="text">
-        <br><br>
-        <input type="submit" value = "계정 생성">
-    </form>
+         <table style="width:90%" border="1">
+             <tr><td>아이디</td><td><input name="user_id" type="text" value=""></td></tr>
+             <tr><td>비밀번호1</td><td><input name="user_password1" type="password" value=""></td></tr>
+             <tr><td>비밀번호2</td><td><input name="user_password2" type="password" value=""></td></tr>
+             <tr><td>이메일 주소</td><td><input name ="user_email" type="text"></td></tr>
+             <tr><td colspan="5" style="text-align: center;"><input type="submit" value="계정 생성"></td></tr>
+         </table>
+   </form>
 
 {% endblock %}

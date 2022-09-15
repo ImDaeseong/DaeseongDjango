@@ -11,8 +11,8 @@ def List_view(request):
     if cur_Page < 0:
         cur_Page = 1
 
-    # 한페이지 2개씩만 보이도록 설정
-    page_range = 2
+    # 한페이지 10개씩만 보이도록 설정
+    page_range = 10
     paging = Paginator(data_all, page_range)
     page_data = paging.get_page(cur_Page)
 

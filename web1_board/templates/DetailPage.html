@@ -2,14 +2,36 @@
 
 {% block content %}
 
-    <h1> {{data.sTitle}} </h1>
-    <p> {{data.sContent}} </p>
-    <p> {{data.dCreated}} </p>
-    <p> {{data.dUpdated}} </p>
-    <a href="{% url 'List_view' %}">리스트</a> &nbsp
-    <a href="{% url 'Delete_view' data.id %}">삭제1</a> |
-    <a href="/DeleteItem/{{ data.id }}/">삭제2</a> &nbsp
-    <a href="{% url 'Update_view' data.id %}">수정1</a> |
-    <a href="/UpdateItem/{{ data.id }}/">수정2</a>
+    <table style="width:90%" border="1">
+        <tr>
+            <td>제목 : {{data.sTitle}} </td>
+        </tr>
+        <tr>
+            <td>작성일 : {{data.dCreated}} </td>
+        </tr>
+        <tr>
+            <td>수정일 : {{data.dUpdated}} </td>
+        </tr>
+        <tr>
+            <td>내용 </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+            <textarea rows="8" style="width:100%" readonly> {{data.sContent}}</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'List_view' %}">리스트</a>
+                <a href="{% url 'Delete_view' data.id %}">삭제1</a>
+                <a href="/DeleteItem/{{ data.id }}/">삭제2</a>
+                <a href="{% url 'Update_view' data.id %}">수정1</a>
+                <a href="/UpdateItem/{{ data.id }}/">수정2</a>
+            </td>
+        </tr>
+    </table>
 
 {% endblock %}

@@ -4,52 +4,79 @@
 
 {% block content %}
 
-    {% for i in data %}
-         <p>제목: {{i.sTitle}}</p>
-         <p>생성일: {{i.dCreated}}</p>
-         <p>수정일: {{i.dUpdated}}</p>
-         <p>내용: {{i.summary}}</p>
-         <p><a href="/DetailItem/{{ i.id }}/" >세부내용</a></p>
-    {% endfor %}
+    <table style="width:90%" border="1">
+         <tr>
+             <th>id</th>
+             <th>제목</th>
+             <th>내용</th>
+             <th>생성일</th>
+             <th>수정일</th>
+         </tr>
 
-    <div>
-	{% if data.has_previous %}
-		<a href="?page={{data.previous_page_number}}">이전</a>
-	{% endif %}
+         {% if data %}
 
-	{% if data %}
-		{% for index in data.paginator.page_range %}
-			<a href="?page={{index}}">{{index}}</a>
-		{% endfor %}
-	{% endif %}
+            {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td><a href="/DetailItem/{{ i.id }}/" >{{ i.sTitle }}</a></td>
+                    <td>{{ i.summary }}</td>
+                    <td>{{ i.dCreated }}</td>
+                    <td>{{ i.dUpdated }}</td>
+                </tr>
+            {% endfor %}
 
-	{% if data.has_next %}
-    	<a href="?page={{data.next_page_number}}">다음</a>
-	{% endif %}
-    </div>
+         {% else %}
+             <tr>
+                 <td colspan="5" style="text-align: center;">게시판 글이 없습니다.</td>
+             </tr>
+         {% endif %}
 
-    <br><br>
+         {% if data %}
+             <tr>
+                 <td colspan="5" style="text-align: center;">
+                    {% if data.has_previous %}
+                        <a href="?page={{data.previous_page_number}}">이전</a>
+                    {% endif %}
 
-    <div>
-	{% if cur_Page > page_range %}
-		<a href="?page=1">[1]</a>
-		<a href="?page={{intStart|sub:page_range|abs}}">[이전{{page_range}}개]</a>
-	{% endif %}
+                    {% if data %}
+                        {% for index in data.paginator.page_range %}
+                            <a href="?page={{index}}">{{index}}</a>
+                        {% endfor %}
+                    {% endif %}
 
-	{% if data %}
-		{% for i in pagelist %}
-			{% if i == curPage %}
-				<b>[<font color="red">{{i}}</font>]</b>
-			{% else %}
-				[<a href="?page={{i}}">{{i}}</a>]
-			{% endif %}
-		{% endfor %}
-	{% endif %}
+                    {% if data.has_next %}
+                        <a href="?page={{data.next_page_number}}">다음</a>
+                    {% endif %}
+                 </td>
+             </tr>
+         {% endif %}
 
-	{% if total_page > intEnd %}
-		<a href="?page={{intEnd|add:1}}">[다음{{page_range}}개]</a>
-		<a href="?page={{total_page}}">[{{total_page}}]</a>
-    {% endif %}
-    </div>
+         {% if data %}
+             <tr>
+                 <td colspan="5" style="text-align: center;">
+                    {% if cur_Page > page_range %}
+                        <a href="?page=1">[1]</a>
+                        <a href="?page={{intStart|sub:page_range|abs}}">[이전{{page_range}}개]</a>
+                    {% endif %}
+
+                    {% if data %}
+                        {% for i in pagelist %}
+                            {% if i == curPage %}
+                                <b>[<font color="red">{{i}}</font>]</b>
+                            {% else %}
+                                [<a href="?page={{i}}">{{i}}</a>]
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    {% if total_page > intEnd %}
+                        <a href="?page={{intEnd|add:1}}">[다음{{page_range}}개]</a>
+                        <a href="?page={{total_page}}">[{{total_page}}]</a>
+                    {% endif %}
+                 </td>
+             </tr>
+         {% endif %}
+
+    </table>
 
 {% endblock %}

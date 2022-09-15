@@ -1,26 +1,47 @@
 {% extends 'BasePage.html' %}
 
 {% block contents %}
-<body>
 
-    {% for i in data %}
-    <div>
-        <div>
-            <div>
-              제목: {{i.sTitle}}<br>
-              생성일: {{i.dCreated}}<br>
-              수정일: {{i.dUpdated}}<br>
-              내용: {{i.summary}}<br>
-              <a href="{% url 'Detail_view' i.id %}">세부내용</a>
-            </div>
-        </div> <br>
-    </div>
-    {% endfor %}
-    <br>
-    <form method="GET" action="{% url 'Search_view' %}">
-        {% csrf_token %}
-        <input name="search" type="text">
-        <input type="submit" value="검색">
-    </form>
-</body>
+    <table style="width:90%">
+        <tr>
+            <td colspan="1">
+                <form method="GET" action="{% url 'Search_view' %}">
+                    {% csrf_token %}
+                    <input name="search" type="text">
+                    <input type="submit" value="검색">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+    <table style="width:90%" border="1">
+         <tr>
+             <th>id</th>
+             <th>제목</th>
+             <th>내용</th>
+             <th>생성일</th>
+             <th>수정일</th>
+         </tr>
+
+         {% if data %}
+
+            {% for i in data %}
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td><a href="/DetailItem/{{ i.id }}/" >{{ i.sTitle }}</a></td>
+                    <td>{{ i.summary }}</td>
+                    <td>{{ i.dCreated }}</td>
+                    <td>{{ i.dUpdated }}</td>
+                </tr>
+            {% endfor %}
+
+         {% else %}
+             <tr>
+                 <td colspan="5" style="text-align: center;">게시판 글이 없습니다.</td>
+             </tr>
+         {% endif %}
+
+    </table>
+
+
 {% endblock %}
