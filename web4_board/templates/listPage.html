@@ -1,7 +1,5 @@
 {% extends 'BasePage.html' %}
 
-{% load static %}
-
 {% load mathfilters  %}
 
 {% block content %}
@@ -53,10 +51,5 @@
 		<a href="?page={{total_page}}">[{{total_page}}]</a>
     {% endif %}
     </div>
-
-    <br>
-    <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
-    <br>
-    <a href="{% url 'List_view' %}"><img src="{% static 'images/img2.png' %}"></a>
 
 {% endblock %}

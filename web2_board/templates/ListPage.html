@@ -8,6 +8,9 @@
 {% load static %}
 
 <body>
+      <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+      <p>
+
       {% for i in data  %}
             <ul>
                 <li><a href="/DetailItem/{{ i.id }}/" >{{ i.sTitle }}</a</li>
@@ -21,10 +24,5 @@
          <input name="search" type="text">
          <input type="submit" value="검색">
       </form>
-      <br>
-      <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
-      <br>
-      <a href="{% url 'List_view' %}"><img src="{% static 'images/img2.png' %}"></a>
-      <br>
 </body>
 </html>

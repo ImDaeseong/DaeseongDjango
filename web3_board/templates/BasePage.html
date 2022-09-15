@@ -1,4 +1,10 @@
+{% load static %}
+
 <body>
+
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+    <p>
+
     <ul>
         <li><a href="{% url 'Add_view' %}">글쓰기</a></li>
         <li><a href="{% url 'addUser' %}">회원가입</a></li>

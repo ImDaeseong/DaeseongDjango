@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>BasePage</title>
 </head>
+
+{% load static %}
+
 <body>
+    <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+    <p>
 
     <div>
         <ul>
