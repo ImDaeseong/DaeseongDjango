@@ -2,7 +2,11 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>BasePage</title>
+    <title>
+        {% block title %}
+            게시판
+        {% endblock title %}
+    </title>
 </head>
 
 {% load static %}

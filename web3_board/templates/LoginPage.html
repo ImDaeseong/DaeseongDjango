@@ -1,8 +1,9 @@
 {% extends 'BasePage.html' %}
 
+{% block title %}로그인{% endblock %}
+
 {% block contents %}
 
-   <h1>로그인</h1>
    <form method= 'POST' action ="{% url 'login' %}">
         {% csrf_token %}
          <table style="width:90%" border="1">

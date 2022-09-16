@@ -1,8 +1,9 @@
 {% extends 'BasePage.html' %}
 
+{% block title %}회원가입{% endblock %}
+
 {% block contents %}
 
-   <h1>회원가입</h1>
    <form method= 'POST' action ="{% url 'addUser' %}">
         {% csrf_token %}
          <table style="width:90%" border="1">
