@@ -26,3 +26,5 @@
 ![1](https://user-images.githubusercontent.com/10001221/186829955-78b94afd-7bf9-4599-b8bc-8a4804c9c13f.png)
 ![2](https://user-images.githubusercontent.com/10001221/186829970-fee1396f-66fd-4389-8215-b23a8ae160cb.png)
 
+### 부트스트랩 설치
+![bootstrap4](https://user-images.githubusercontent.com/10001221/191215467-b5690525-c9a2-4580-ad2e-5586bc539537.png)
