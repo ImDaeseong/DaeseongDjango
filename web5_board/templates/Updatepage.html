@@ -1,0 +1,21 @@
+{% extends 'BasePage.html' %}
+
+{% block title %}게시판 수정{% endblock %}
+
+{% block contents %}
+
+    <div class="container">
+       <form method="POST" enctype="multipart/form-data">
+           {% csrf_token %}
+           <input id="iImage1" type="hidden" name="iImage1" value={{data.iImage}}>
+
+           <table class="table table-bordered table-sm">
+               <tr><td>제목</td><td><input class="form-control" type="text" name="sTitle" value={{data.sTitle}}></td></tr>
+               <tr><td>내용</td><td><textarea class="form-control" rows="10" cols="50" name="sContent">{{data.sContent}}</textarea></td></tr>
+               <tr><td>이미지</td><td><input id="iImage" type="file" name="iImage"></td></tr>
+               <tr><td colspan="2" style="text-align: right;"><input class="btn btn-primary btn-sm" type="submit" value="수정"></td></tr>
+           </table>
+       </form>
+    </div>
+
+{% endblock %}

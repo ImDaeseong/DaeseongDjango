@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+{% load bootstrap4 %}
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            게시판
+        {% endblock title %}
+    </title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+
+{% load static %}
+
+<body>
+    <div class="container">
+        <a href="{% url 'List_view' %}"><img src="{% static 'images/img1.png' %}"></a>
+        <ul>
+            <li><a class="nav-link px-2 text-secondary" href="{% url 'Add_view' %}">글쓰기</a></li>
+            <li><a class="nav-link px-2 text-secondary" href="{% url 'addUser' %}">회원가입</a></li>
+            <li><a class="nav-link px-2 text-secondary" href="{% url 'login' %}">로그인</a></li>
+            <li><a class="nav-link px-2 text-secondary" href="{% url 'logout' %}">로그아웃</a></li>
+        </ul>
+        {% block contents %}
+        {% endblock %}
+        <a href="{% url 'List_view' %}"><img src="/static/images/img2.png"></a>
+    </div>
+</body>
