@@ -28,3 +28,6 @@
 
 ### 부트스트랩 설치
 ![bootstrap4](https://user-images.githubusercontent.com/10001221/191215467-b5690525-c9a2-4580-ad2e-5586bc539537.png)
+
+### rest_framework
+![restframework](https://user-images.githubusercontent.com/10001221/192970956-ed7eb176-3c92-4467-8201-8c4e637cf1b1.png)
