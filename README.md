@@ -19,15 +19,15 @@
 ### create-superuser
 ![8](https://user-images.githubusercontent.com/10001221/186602073-2d38a334-d288-4db0-a899-f2ad9982f36f.png)
 
+### 부트스트랩 설치
+![bootstrap4](https://user-images.githubusercontent.com/10001221/191215467-b5690525-c9a2-4580-ad2e-5586bc539537.png)
+
+### rest_framework
+![restframework](https://user-images.githubusercontent.com/10001221/192970956-ed7eb176-3c92-4467-8201-8c4e637cf1b1.png)
+
 ### pip-install
 ![9](https://user-images.githubusercontent.com/10001221/186602120-9f37fe85-25c6-45b1-8a45-48be212a9390.png)
 
 ### 설치된 패키지 목록
 ![1](https://user-images.githubusercontent.com/10001221/186829955-78b94afd-7bf9-4599-b8bc-8a4804c9c13f.png)
 ![2](https://user-images.githubusercontent.com/10001221/186829970-fee1396f-66fd-4389-8215-b23a8ae160cb.png)
-
-### 부트스트랩 설치
-![bootstrap4](https://user-images.githubusercontent.com/10001221/191215467-b5690525-c9a2-4580-ad2e-5586bc539537.png)
-
-### rest_framework
-![restframework](https://user-images.githubusercontent.com/10001221/192970956-ed7eb176-3c92-4467-8201-8c4e637cf1b1.png)
