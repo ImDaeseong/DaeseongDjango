@@ -1,0 +1,13 @@
+{% extends "BasePage.html" %}
+
+{% block title %}게시판 수정{% endblock %}
+
+{% block content %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form_data.as_p }}
+        <button type="submit">수정</button>
+    </form>
+
+{% endblock %}
