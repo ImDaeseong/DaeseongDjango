@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DetailPage</title>
+</head>
+
+<body>
+
+    <table style="width:90%" border="1">
+        <tr>
+            <td>제목 : {{data.sTitle}} </td>
+        </tr>
+        <tr>
+            <td>작성일 : {{data.dCreated}} </td>
+        </tr>
+        <tr>
+            <td>수정일 : {{data.dUpdated}} </td>
+        </tr>
+
+        {% if data.iImage %}
+        <tr>
+            <td><img src = "{{ data.iImage.url }}" alt="" height="50"> </td>
+        </tr>
+        {% endif %}
+
+        <tr>
+            <td>내용 </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <textarea rows="8" style="width:100%" readonly> {{data.sContent}}</textarea>
+            </td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <td>
+                <a href="{% url 'List_view' %}">리스트</a>
+                <a href="/DeleteItem/{{ data.id }}/">삭제</a>
+                <a href="/UpdateItem/{{ data.id }}/">수정</a>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
