@@ -17,6 +17,9 @@ class List_API_1(APIView):
         serializer = boardSerializerAll(queryset, many=True)
         return Response(serializer.data)
 
+    def post(self, request):
+        return HttpResponse(status=200)
+
 
 # rest framework API 2
 class List_API_2(APIView):
@@ -25,6 +28,9 @@ class List_API_2(APIView):
         # print(queryset)
         serializer = boardSerializer(queryset, many=True)
         return Response(serializer.data)
+
+    def post(self, request):
+        return HttpResponse(status=200)
 
 
 # rest framework API 3
