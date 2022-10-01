@@ -16,3 +16,4 @@ class board_content(models.Model):
         db_table = 'board_content'  # 테이블 이름
         verbose_name = '게시판 내용'
         verbose_name_plural = '게시판 내용'
+        ordering = ['dCreated']  # 오름차순

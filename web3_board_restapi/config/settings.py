@@ -1,34 +1,27 @@
 import os
 from pathlib import Path
+
 from config import util
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-# print('BASE_DIR 경로:' + str(BASE_DIR))
 
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
-# print('TEMPLATE_DIR 경로:' + str(TEMPLATE_DIR))
-
-
-SECRET_KEY = util.get_secret()  # 'django-insecure-d86=wm#pjw7#cn4f-r=%_-7^b-k3eb$lxxl)8-c545zc5(ep95'
+SECRET_KEY = util.get_secret()  # 'django-insecure-*1_oh3+m(#8f6tfpmrgitcz9vu*n1#g-2$!pq@y0@q=vel0$xp'
 
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
+    'board',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'board',
-    'rest_framework',  # rest framework
-    # 'corsheaders',  # CORS
 ]
 
 MIDDLEWARE = [
-    # 'corsheaders.middleware.CorsMiddleware',  # CORS
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,29 +73,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# 모든 url 허용
-# CORS_ORIGIN_ALLOW_ALL = True
-
-# 정의된 url만  허용
-"""
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-    'http://localhost:8000'
-)
-"""
-
-REST_FRAMEWORK = {
-
-    # 제한없는 접근 허용
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.AllowAny',
-    ],
-
-    # 페이징 기능
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,
-}
-
 # 다국어/지역시간 한국으로 변경
 LANGUAGE_CODE = 'ko-kr'
 
@@ -119,8 +89,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+# print('STATICFILES_DIRS 경로:' + str(STATICFILES_DIRS))
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# print('MEDIA_ROOT 경로:' + str(MEDIA_ROOT))
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

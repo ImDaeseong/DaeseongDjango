@@ -12,8 +12,10 @@ class board_content(models.Model):
     def __str__(self):
         return self.sTitle
 
+    def summary(self):
+        return self.sContent[:10] + str('...')
+
     class Meta:
         db_table = 'board_content'  # 테이블 이름
         verbose_name = '게시판 내용'
         verbose_name_plural = '게시판 내용'
-        ordering = ['-dCreated']  # 내림차순

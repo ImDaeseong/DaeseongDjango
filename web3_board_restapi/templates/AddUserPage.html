@@ -1,0 +1,17 @@
+{% extends 'BasePage.html' %}
+
+{% block title %}회원가입{% endblock %}
+
+{% block contents %}
+
+   <form method= 'POST' action ="{% url 'addUser' %}">
+        {% csrf_token %}
+         <table style="width:90%" border="1">
+             <tr><td>아이디</td><td><input name="user_id" type="text" value=""></td></tr>
+             <tr><td>비밀번호1</td><td><input name="user_password1" type="password" value=""></td></tr>
+             <tr><td>비밀번호2</td><td><input name="user_password2" type="password" value=""></td></tr>
+             <tr><td colspan="5" style="text-align: center;"><input type="submit" value="계정 생성"></td></tr>
+         </table>
+   </form>
+
+{% endblock %}
