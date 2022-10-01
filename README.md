@@ -25,6 +25,9 @@
 ### rest_framework
 ![restframework](https://user-images.githubusercontent.com/10001221/192970956-ed7eb176-3c92-4467-8201-8c4e637cf1b1.png)
 
+### corsheaders
+![cors](https://user-images.githubusercontent.com/10001221/193394171-418f8dde-e1a6-4f00-b316-2c38be80f00c.png)
+
 ### pip-install
 ![9](https://user-images.githubusercontent.com/10001221/186602120-9f37fe85-25c6-45b1-8a45-48be212a9390.png)
 
