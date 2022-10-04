@@ -28,6 +28,9 @@
 ### corsheaders
 ![cors](https://user-images.githubusercontent.com/10001221/193394171-418f8dde-e1a6-4f00-b316-2c38be80f00c.png)
 
+### simple-jwt
+![simplejwt](https://user-images.githubusercontent.com/10001221/193792392-fd8b4cd0-842a-4f3c-97d0-fd26fa906c4a.png)
+
 ### pip-install
 ![9](https://user-images.githubusercontent.com/10001221/186602120-9f37fe85-25c6-45b1-8a45-48be212a9390.png)
 
