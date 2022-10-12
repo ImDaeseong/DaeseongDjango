@@ -12,13 +12,14 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    'board',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'board',
+    'user',
 ]
 
 MIDDLEWARE = [

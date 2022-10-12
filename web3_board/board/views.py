@@ -64,7 +64,6 @@ def Delete_view(request, pk):
 
 
 def Update_view(request, pk):
-
     if request.method == "POST":
         sTitle = request.POST.get('sTitle')
         sContent = request.POST.get('sContent')
