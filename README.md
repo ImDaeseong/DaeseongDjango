@@ -37,6 +37,12 @@
 ### pip-install
 ![9](https://user-images.githubusercontent.com/10001221/186602120-9f37fe85-25c6-45b1-8a45-48be212a9390.png)
 
-### 설치된 패키지 목록
+### 설치된 패키지 목록 설치
 ![1](https://user-images.githubusercontent.com/10001221/186829955-78b94afd-7bf9-4599-b8bc-8a4804c9c13f.png)
+
+### 설치된 패키지 목록 만들기
 ![2](https://user-images.githubusercontent.com/10001221/186829970-fee1396f-66fd-4389-8215-b23a8ae160cb.png)
+
+### pycharm django 실행 환경
+![pyrun1](https://github.com/ImDaeseong/DaeseongDjango/assets/10001221/21ef0a1e-2652-4aa7-9ec7-66686d5d7ff3)
+![pyrun2](https://github.com/ImDaeseong/DaeseongDjango/assets/10001221/f4e7d0b2-a2e6-4371-8c34-0557143d6ef6)
