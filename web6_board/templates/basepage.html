@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+{% load bootstrap4 %}
+
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            게시판
+        {% endblock title %}
+    </title>
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+</head>
+
+{% load static %}
+
+<body>
+    <div>
+        <span>
+        {% if request.session.login  %}
+           {{ request.session.login}}님이 로그인 하셨습니다. &nbsp;&nbsp;
+           <a href="/member/logout/">로그아웃</a>
+        {% else %}
+           <a href="/member/login/">로그인</a> &nbsp;&nbsp;
+           <a href="/member/join/">회원가입</a>
+        {% endif %}
+      </span>
+    </div>
+
+    <div>
+        <ul>
+            <li><a href="/member/main">회원관리</a></li>
+            <li><a href="/board/list">게시판</a></li>
+        </ul>
+        {% block contents %}
+        {% endblock %}
+    </div>
+</body>
