@@ -1,4 +1,52 @@
 {% extends "basepage.html" %}
-{% block content %}
 
-{% endblock content %}
+{% block title %}게시판 쓰기{% endblock %}
+
+{% block contents %}
+
+<script type="text/javascript">
+   function inputcheck() {
+       f = document.f;
+       f.submit();
+   }
+</script>
+
+<div class="content">
+    <form action="../write/" method="post" enctype="multipart/form-data" name="f">
+        {% csrf_token %}
+        <table class="table table-bordered table-sm text-center">
+            <tr>
+                <td>글쓴이</td>
+                <td><input type="text" name="name" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pwd" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td>제목</td>
+                <td><input type="text" name="sTitle" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td>내용</td>
+                <td><textarea rows="15" name="sContent" class="form-control"></textarea></td>
+            </tr>
+
+            <tr>
+                <td>첨부파일</td>
+                <td><input type="file" name="filename" class="form-control"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <a href="javascript:inputcheck()" class="btn btn-primary">등록</a>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+{% endblock %}

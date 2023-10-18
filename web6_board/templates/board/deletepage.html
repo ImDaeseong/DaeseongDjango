@@ -1,4 +1,29 @@
 {% extends "basepage.html" %}
-{% block content %}
 
-{% endblock content %}
+{% block title %}게시판 삭제{% endblock %}
+
+{% block contents %}
+
+<div class="content">
+
+    <form method="post" action="../../delete/{{number}}/" name="f">
+        {% csrf_token %}
+
+        <input type="hidden" name="number" value="{{number}}">
+
+        <table class="w3-table-all">
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="pwd"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" value="삭제"></td>
+            </tr>
+        </table>
+
+    </form>
+
+</div>
+
+{% endblock %}

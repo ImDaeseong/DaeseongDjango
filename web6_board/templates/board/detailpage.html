@@ -1,4 +1,48 @@
 {% extends "basepage.html" %}
-{% block content %}
 
-{% endblock content %}
+{% block title %}게시판 세부 정보{% endblock %}
+
+{% block contents %}
+
+    <div class="content">
+        <table class="w3-table-all" style="width: 100%; border: 1px solid #ddd; border-collapse: collapse;">
+            <tr>
+                <th width="20%" style="border: 1px solid #ddd; padding: 8px;">글쓴이</th>
+                <td width="80%" style="text-align:left; border: 1px solid #ddd; padding: 8px;">{{ board.name }}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid #ddd; padding: 8px;">제목</th>
+                <td style="text-align:left; border: 1px solid #ddd; padding: 8px;">{{ board.sTitle }}</td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid #ddd; padding: 8px;">내용</th>
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    <table style="width:100%; height:250px; border: 1px solid #ddd; border-collapse: collapse;">
+                        <tr>
+                            <td style="border: 1px solid #ddd; vertical-align: top; text-align: left; padding: 8px;">
+                                {{ board.sContent|linebreaks }}
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <th style="border: 1px solid #ddd; padding: 8px;">첨부파일</th>
+                <td style="border: 1px solid #ddd; padding: 8px;">
+                    {% if board.filename %}
+                        <a href="/media/images/{{ board.filename }}">{{ board.filename }}</a>
+                    {% else %}
+                        &nbsp;
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="w3-center" style="border: 1px solid #ddd; padding: 8px;">
+                    <a href="../../update/{{ board.number }}/">[수정]</a>
+                    <a href="../../delete/{{ board.number }}/">[삭제]</a>
+                    <a href="../../list">[목록]</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

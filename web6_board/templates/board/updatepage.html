@@ -1,4 +1,65 @@
 {% extends "basepage.html" %}
-{% block content %}
 
-{% endblock content %}
+{% block title %}게시판 업데이트{% endblock %}
+
+{% block contents %}
+  <script>
+    function fileDelete() {
+      document.f.filename1.value = "";
+      fileDesc.style.display = "none";
+    }
+  </script>
+
+  <div class="container">
+
+    <form action="../../update/{{ board.number }}/" method="post" enctype="multipart/form-data" name="f">
+          {% csrf_token %}
+
+          <input type="hidden" name="number" value="{{ board.number }}">
+          <input type="hidden" name="filename1" value="{{ board.filename }}">
+
+          <table class="table">
+            <tr>
+              <td>글쓴이</td>
+              <td><input type="text" name="name" value="{{ board.name }}" class="form-control"></td>
+            </tr>
+
+            <tr>
+              <td>비밀번호</td>
+              <td><input type="password" name="pwd" class="form-control"></td>
+            </tr>
+
+            <tr>
+              <td>제목</td>
+              <td><input type="text" name="sTitle" value="{{ board.sTitle }}" class="form-control"></td>
+            </tr>
+
+            <tr>
+              <td>내용</td>
+              <td><textarea rows="15" name="sContent" id="content" class="form-control">{{ board.sContent }}</textarea></td>
+            </tr>
+
+            <tr>
+              <td>첨부파일</td>
+
+                <td>
+                  {% if board.filename %}
+                    <div id="fileDesc" style="display: inline-block;">{{ board.filename }}
+                      <a href="javascript:fileDelete()">[첨부파일 삭제]</a>
+                    </div>
+                  {% endif %}
+                  <input type="file" name="filename2" style="display: inline-block;">
+                </td>
+            </tr>
+
+            <tr>
+              <td colspan="2" class="text-center">
+                <button type="submit" class="btn btn-primary">게시물수정</button>
+              </td>
+            </tr>
+          </table>
+        </form>
+
+  </div>
+
+{% endblock %}
