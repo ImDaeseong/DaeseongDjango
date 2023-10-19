@@ -1,0 +1,27 @@
+{% extends "basepage.html" %}
+
+{% block title %}회원 관리{% endblock %}
+
+{% block contents %}
+
+<div class="content">
+
+    {%if request.session.login %}
+        <div>
+             <h3>{{request.session.login}}로 로그인 되었습니다.</h3>
+            <h3><a href="../logout">로그아웃</a></h3>
+            <h3><a href="../detail/{{request.session.login}}/">회원정보보기</a></h3>
+
+            {% if request.session.login == 'test'%}
+            <h3><a href="../list" >회원목록 보기</a></h3>
+            {% endif %}
+         </div>
+   {% else %}
+         <script>
+           location.href='../login/'
+         </script>
+   {% endif %}
+
+</div>
+
+{% endblock %}

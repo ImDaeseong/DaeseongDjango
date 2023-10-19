@@ -4,6 +4,67 @@
 
 {% block contents %}
 
+<div class="content">
 
+    <table>
+
+        <thead>
+            <tr>
+                <th>아이디</th>
+                <th>사진</th>
+                <th>이름</th>
+                <th>성별</th>
+                <th>전화</th>
+                <th>이메일</th>
+                <th>동작</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for m in member %}
+                <tr>
+                    <td><a href="../detail/{{m.id}}/">{{m.id}}</a></td>
+                    <td><img src="/media/picture/{{m.picture}}" width="20" height="30"></td>
+                    <td>{{m.name}}</td>
+                    <td>
+                        {% if m.gender == 1 %}
+                            남
+                        {% else %}
+                            여
+                        {% endif %}
+                    </td>
+                    <td>{{m.tel}}</td>
+                    <td>{{m.email}}</td>
+                    <td>
+                        <a href="../update/{{m.id}}/">[수정]</a>
+                        {% if m.id != 'admin' %}
+                            <a href="../delete/{{m.id}}/">[강제탈퇴]</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+
+</div>
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 10px;
+    }
+
+    th, td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+</style>
 
 {% endblock %}

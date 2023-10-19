@@ -118,4 +118,4 @@ def write(request):
         )
         data.save()
 
-    return HttpResponseRedirect("../list")
+    return HttpResponseRedirect("../list/")

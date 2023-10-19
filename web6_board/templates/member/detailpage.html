@@ -4,6 +4,48 @@
 
 {% block contents %}
 
+<div class="content">
 
+    <table>
+        <tr>
+            <td rowspan="6" width="30%">
+                <img src="/media/picture/{{member.picture}}" width="200" height="210">
+            </td>
+            <th width="20%">아이디</th><td>{{member.id}}</td>
+        </tr>
+
+        <tr>
+            <th>이름</th><td>{{member.name}}</td>
+        </tr>
+
+        <tr><th>성별</th>
+            <td>{% if member.gender == 1 %}
+                   남
+                {% else %}
+                   여
+                {% endif %}
+            </td>
+        </tr>
+
+        <tr>
+            <th>전화</th><td>{{member.tel}}</td>
+        </tr>
+
+        <tr>
+            <th>이메일</th><td>{{member.email}}</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" class="w3-center">
+                <a href="../../update/{{member.id}}/">[수정]</a>
+                {% if request.session.login != 'test' %}
+                     <a href="../../delete/{{mem.id}}/">[탈퇴]</a>
+                {% endif %}
+            </td>
+        </tr>
+
+    </table>
+
+</div>
 
 {% endblock %}
