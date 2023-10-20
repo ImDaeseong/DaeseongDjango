@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('gender', models.IntegerField(default=0)),
                 ('tel', models.CharField(max_length=20)),
                 ('email', models.CharField(max_length=100)),
-                ('picture', models.CharField(max_length=200)),
+                ('profile', models.CharField(max_length=200)),
             ],
         ),
     ]

@@ -4,25 +4,25 @@
 
 {% block contents %}
 
+{% load static %}
+
 <script type="text/javascript">
    function win_upload() {
-       var op = "width=500, height=500, left=50,top=150";
-       open("../../media/picture/", "", op);
+	   var op = "width=500, height=500, left=50,top=150";
+	   open("../profile/","",op);
    }
 </script>
 
 <div class="content">
-
     <form action="../adduser/" method="post" name="f">
         {% csrf_token %}
-
-        <input type="hidden" name="picture" value="{% if picture %}{{ picture }}{% else %}path_to_default_image{% endif %}" >
+        <input type="hidden" name="profile" value="" >
 
         <table>
             <tr>
                 <td rowspan="4" valign="bottom">
-                    <img src="{% if picture %}{{ picture }}{% else %}path_to_default_image{% endif %}" width="100" height="120" id="pic"><br>
-                    <font size="1"><a href="javascript:win_upload()">사진등록</a></font>
+                    <img src="{% static 'images/img1.png' %}" width="100" height="120" id="pic"><br>
+                    <a href="javascript:win_upload()">사진등록</a>
                 </td>
 
                 <th>아이디</th>
@@ -41,8 +41,8 @@
 
             <tr>
                 <th>성별</th>
-                <td><input type="radio" name="gender" value="1" checked>남
-                    <input type="radio" name="gender" value="2">여</td>
+                <td><input type="radio" name="gender" value="1" id="male" checked><label for="male">남</label>
+                    <input type="radio" name="gender" value="2" id="female"><label for="female">여</label></td>
             </tr>
 
             <tr>
@@ -60,7 +60,5 @@
             </tr>
         </table>
     </form>
-
 </div>
-
 {% endblock %}

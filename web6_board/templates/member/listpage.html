@@ -36,10 +36,7 @@
                     <td>{{m.tel}}</td>
                     <td>{{m.email}}</td>
                     <td>
-                        <a href="../update/{{m.id}}/">[수정]</a>
-                        {% if m.id != 'admin' %}
-                            <a href="../delete/{{m.id}}/">[강제탈퇴]</a>
-                        {% endif %}
+                        <a href="../delete/{{m.id}}/">[강제탈퇴]</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>사진등록</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <img id="preview" src="../../media/images/img1.png">
+        </td>
+    <tr>
+
+    </tr>
+        <td>
+            <form action="../profile/" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="profile" id="imageFile" accept="img/*">
+                <input type="submit" value="사진등록">
+            </form>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    let imageFile = document.querySelector('#imageFile');
+    let preview = document.querySelector('#preview');
+
+    imageFile.addEventListener('change', function (e) {
+        let file = e.target.files[0];
+
+        if (file) {
+            let reader = new FileReader();
+            reader.onload = function (e) {
+                preview.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
+
+</body>
+</html>

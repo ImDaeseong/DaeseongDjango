@@ -12,7 +12,7 @@
             {% if listcount == 0 %}
                <td align="center" colspan="5">등록된 글이 없습니다.</td>
             {% else %}
-               <td align="center" colspan="5">글개수 :{{listcount}}</td>
+               <td align="center" colspan="5">전체 개수 :{{listcount}}</td>
             {% endif %}
         </tr>
 
@@ -29,17 +29,21 @@
                 <td>{{b.number}}</td>
                 <td align="left">
                 {% if b.filename %}
-                    <a href="/media/images/{{b.filename}}">@</a>
-                {% else %}
-                    &nbsp;&nbsp;&nbsp;
+                    <a href="/media/images/{{b.filename}}">[{{b.filename}}]</a>
                 {% endif %}
                 <a href="../detail/{{b.number}}/">{{b.sTitle}}</a>
                 </td>
                 <td>{{b.name}}</td>
-                <td>{{ b.dCreated|date:"Y-m-d H:i:s" }}</td>
+                <td>{{b.dCreated|date:"Y-m-d H:i:s" }}</td>
                 <td>{{b.readcnt}}</td>
             </tr>
         {% endfor %}
+
+        <tr>
+            <td colspan="2" class="w3-center" style="border: 1px solid #ddd; padding: 8px;">
+                <a href="../write">[글쓰기]</a>
+            </td>
+        </tr>
 
     </table>
 

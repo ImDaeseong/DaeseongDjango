@@ -20,7 +20,7 @@ def delete(request, number):
             board.delete()
             return HttpResponseRedirect("../../list/")
         except:
-            context = {"msg": "삭제 오류", "url": "../../update/" + str(number) + "/"}
+            context = {"msg": "삭제 오류", "url": "../../delete/" + str(number) + "/"}
             return render(request, "alert.html", context)
 
 

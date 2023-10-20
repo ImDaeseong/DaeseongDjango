@@ -4,8 +4,36 @@
 
 {% block contents %}
 
+<script type="text/javascript">
+   function inputcheck(f) {
+	   if(f.pwd.value == "") {
+		   alert("비밀번호를 입력하세요")
+		   f.pwd.focus();
+		   return false;
+	   }
+	   return true;
+   }
+</script>
+
 <div class="content">
 
+    <form action="../../delete/{{id}}/" method="post" onsubmit="return inputcheck(this)">
+        {% csrf_token %}
+
+        <table>
+
+            <tr>
+                <th>비밀번호</th>
+                <td><input type="password" name="pwd" /></td>
+            </tr>
+
+            <tr>
+                <td colspan="2"><input type="submit" value="탈퇴하기" /></td>
+            </tr>
+
+        </table>
+
+    </form>
 
 </div>
 
